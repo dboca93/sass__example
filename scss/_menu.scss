@@ -1,4 +1,4 @@
-//* Menu styling area(hamburger)
+/* Menu styling area(hamburger)*/
 .menu-btn {
   position: absolute;
   top: 1rem;
@@ -54,15 +54,6 @@
         background-color: $secondary-color;
       }
     }
-  } //* close of the burger
-} //* close of the div menu-btn
+  } /* close of the burger*/
+} /* close of the div menu-btn*/
 
-// this .open temporary class
-// is being applied to the
-// wrapper menu-btn; NOTE that
-// sometimes pseudo-elements do not
-// inherit the properties of their parent
-// in this example we can see that
-// background is not being inherited.
-// why does the transparent class
-// not apply to the pseudo-element.

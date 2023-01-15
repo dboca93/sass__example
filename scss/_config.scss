@@ -1,18 +1,15 @@
 $primary-color: #272727; 
 $secondary-color: #ff652f; 
 $out: 1px solid white; 
-//*beginning of reset(from config)
+/*beginning of reset(from config)*/
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-/*
-*config = reset + variables. 
- */
+/* *config = reset + variables. */
 
- //* mixin standard display flex; 
 
  @mixin dflex($direction) {
     display: flex;
