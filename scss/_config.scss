@@ -1,0 +1,60 @@
+$primary-color: #272727; 
+$secondary-color: #ff652f; 
+$out: 1px solid white; 
+//*beginning of reset(from config)
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/*
+*config = reset + variables. 
+ */
+
+ //* mixin standard display flex; 
+
+ @mixin dflex($direction) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: $direction;
+ }
+
+ @mixin transition-ease {
+    transition: all .5s ease-in-out;
+ }
+
+ @mixin transition-quicker {
+    transition: all 0.3s ease; 
+ }
+
+
+ @function set-text-color($color) {
+    @if (lightness($color) > 40%) {
+        @return #000; 
+    } @else {
+        @return #fff; 
+    }
+ }
+
+ /*the following are 
+ mixins for our media queries */
+
+@mixin media-md {
+   @media screen and (min-width: 768px) {
+      @content; 
+   }
+
+}
+@mixin media-lg {
+   @media screen and (min-width: 1024px) {
+      @content; 
+   }
+}
+
+@mixin media-xl {
+   @media screen and (min-width: 1600px) {
+      @content; 
+   }
+}

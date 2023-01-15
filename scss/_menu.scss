@@ -1,0 +1,68 @@
+//* Menu styling area(hamburger)
+.menu-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 1;
+  height: 20px;
+  width: 28px;
+  cursor: pointer;
+  @include transition-ease;
+
+  &__burger {
+    position: absolute;
+    right: 0;
+    top: 0.5rem;
+    width: 28px;
+    height: 3px;
+    background: set-text-color($primary-color);
+    @include transition-ease;
+
+    &::before {
+      content: " ";
+      position: absolute;
+      top: -8px;
+      width: 28px;
+      height: 3px;
+      background-color: set-text-color($primary-color);
+      @include transition-ease;
+    }
+
+    &::after {
+      content: " ";
+      position: absolute;
+      top: 8px;
+      width: 20px;
+      height: 3px;
+      background-color: set-text-color($primary-color);
+      @include transition-ease;
+    }
+
+    &.open {
+      // only active after click event.
+      transform: rotate(720deg);
+      background: transparent;
+
+      &::before {
+        transform: rotate(45deg) translate(5px, 8px);
+        background-color: $secondary-color;
+      }
+
+      &::after {
+        width: 28px;
+        transform: rotate(-45deg) translate(3px, -7px);
+        background-color: $secondary-color;
+      }
+    }
+  } //* close of the burger
+} //* close of the div menu-btn
+
+// this .open temporary class
+// is being applied to the
+// wrapper menu-btn; NOTE that
+// sometimes pseudo-elements do not
+// inherit the properties of their parent
+// in this example we can see that
+// background is not being inherited.
+// why does the transparent class
+// not apply to the pseudo-element.
